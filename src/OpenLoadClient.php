@@ -45,7 +45,7 @@ use Psr\Http\Message\ResponseInterface;
  */
 class OpenLoadClient
 {
-    const API_BASE_URL = 'https://api.openload.co';
+    const API_BASE_URL = 'https://api.fruithosted.net';
     const API_VERSION  = 1;
 
     /**
