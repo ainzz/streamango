@@ -9,7 +9,7 @@ It's just a php client of the [streamango.com](https://streamango.com/) service.
 ## Install
 
 ```
-composer require BurakBoz/streamango:~1.0
+composer require burakboz/streamango:~1.0
 ```
 
 ## Usage
