@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ideneal\OpenLoad\Builder;
+namespace BurakBoz\streamango\Builder;
 
-use Ideneal\OpenLoad\Entity\File;
-use Ideneal\OpenLoad\Entity\Folder;
+use BurakBoz\streamango\Entity\File;
+use BurakBoz\streamango\Entity\Folder;
 
 /**
  * ContentBuilder

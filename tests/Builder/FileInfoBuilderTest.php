@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ideneal\OpenLoad\Test\Builder;
+namespace BurakBoz\streamango\Test\Builder;
 
-use Ideneal\OpenLoad\Builder\FileInfoBuilder;
+use BurakBoz\streamango\Builder\FileInfoBuilder;
 
 /**
  * FileInfoBuilderTest
@@ -32,6 +32,6 @@ class FileInfoBuilderTest extends \PHPUnit_Framework_TestCase
     {
         $data     = json_decode($this->fixture, true);
         $fileInfo = FileInfoBuilder::buildFileInfo($data);
-        $this->assertInstanceOf('Ideneal\OpenLoad\Entity\FileInfo', $fileInfo);
+        $this->assertInstanceOf('BurakBoz\streamango\Entity\FileInfo', $fileInfo);
     }
 }

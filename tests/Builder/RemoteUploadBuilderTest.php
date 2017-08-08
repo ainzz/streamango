@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ideneal\OpenLoad\Test\Builder;
+namespace BurakBoz\streamango\Test\Builder;
 
-use Ideneal\OpenLoad\Builder\RemoteUploadBuilder;
+use BurakBoz\streamango\Builder\RemoteUploadBuilder;
 
 /**
  * RemoteUploadBuilderTest
@@ -37,7 +37,7 @@ class RemoteUploadBuilderTest extends \PHPUnit_Framework_TestCase
     {
         $data   = json_decode($this->fixtureUpload, true);
         $upload = RemoteUploadBuilder::buildRemoteUpload($data);
-        $this->assertInstanceOf('Ideneal\OpenLoad\Entity\RemoteUpload', $upload);
+        $this->assertInstanceOf('BurakBoz\streamango\Entity\RemoteUpload', $upload);
     }
 
     /**
@@ -47,6 +47,6 @@ class RemoteUploadBuilderTest extends \PHPUnit_Framework_TestCase
     {
         $data   = json_decode($this->fixtureStatus, true);
         $status = RemoteUploadBuilder::buildRemoteUploadStatus($data);
-        $this->assertInstanceOf('Ideneal\OpenLoad\Entity\RemoteUploadStatus', $status);
+        $this->assertInstanceOf('BurakBoz\streamango\Entity\RemoteUploadStatus', $status);
     }
 }

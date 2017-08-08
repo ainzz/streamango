@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ideneal\OpenLoad\Builder;
+namespace BurakBoz\streamango\Builder;
 
-use Ideneal\OpenLoad\Entity\FileInfo;
+use BurakBoz\streamango\Entity\FileInfo;
 
 /**
  * FileInfoBuilder

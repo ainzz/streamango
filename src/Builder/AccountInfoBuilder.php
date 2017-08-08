@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ideneal\OpenLoad\Builder;
+namespace BurakBoz\streamango\Builder;
 
-use Ideneal\OpenLoad\Entity\AccountInfo;
+use BurakBoz\streamango\Entity\AccountInfo;
 
 /**
  * AccountBuilder

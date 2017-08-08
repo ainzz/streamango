@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Ideneal\OpenLoad\Entity;
+namespace BurakBoz\streamango\Entity;
 
 /**
  * The ticket class to preparing a download

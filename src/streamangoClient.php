@@ -9,41 +9,41 @@
  * file that was distributed with this source code.
  */
 
-namespace Ideneal\OpenLoad;
+namespace BurakBoz\streamango;
 
 use GuzzleHttp\Client;
-use Ideneal\OpenLoad\Builder\AccountInfoBuilder;
-use Ideneal\OpenLoad\Builder\ContentBuilder;
-use Ideneal\OpenLoad\Builder\ConversionStatusBuilder;
-use Ideneal\OpenLoad\Builder\FileInfoBuilder;
-use Ideneal\OpenLoad\Builder\LinkBuilder;
-use Ideneal\OpenLoad\Builder\RemoteUploadBuilder;
-use Ideneal\OpenLoad\Builder\TicketBuilder;
-use Ideneal\OpenLoad\Entity\AbstractContent;
-use Ideneal\OpenLoad\Entity\AccountInfo;
-use Ideneal\OpenLoad\Entity\ConversionStatus;
-use Ideneal\OpenLoad\Entity\DownloadLink;
-use Ideneal\OpenLoad\Entity\File;
-use Ideneal\OpenLoad\Entity\FileInfo;
-use Ideneal\OpenLoad\Entity\Folder;
-use Ideneal\OpenLoad\Entity\RemoteUpload;
-use Ideneal\OpenLoad\Entity\RemoteUploadStatus;
-use Ideneal\OpenLoad\Entity\Ticket;
-use Ideneal\OpenLoad\Entity\UploadLink;
-use Ideneal\OpenLoad\Exception\BadRequestException;
-use Ideneal\OpenLoad\Exception\BandwidthUsageExceededException;
-use Ideneal\OpenLoad\Exception\FileNotFoundException;
-use Ideneal\OpenLoad\Exception\PermissionDeniedException;
-use Ideneal\OpenLoad\Exception\ServerException;
-use Ideneal\OpenLoad\Exception\UnavailableForLegalReasonsException;
+use BurakBoz\streamango\Builder\AccountInfoBuilder;
+use BurakBoz\streamango\Builder\ContentBuilder;
+use BurakBoz\streamango\Builder\ConversionStatusBuilder;
+use BurakBoz\streamango\Builder\FileInfoBuilder;
+use BurakBoz\streamango\Builder\LinkBuilder;
+use BurakBoz\streamango\Builder\RemoteUploadBuilder;
+use BurakBoz\streamango\Builder\TicketBuilder;
+use BurakBoz\streamango\Entity\AbstractContent;
+use BurakBoz\streamango\Entity\AccountInfo;
+use BurakBoz\streamango\Entity\ConversionStatus;
+use BurakBoz\streamango\Entity\DownloadLink;
+use BurakBoz\streamango\Entity\File;
+use BurakBoz\streamango\Entity\FileInfo;
+use BurakBoz\streamango\Entity\Folder;
+use BurakBoz\streamango\Entity\RemoteUpload;
+use BurakBoz\streamango\Entity\RemoteUploadStatus;
+use BurakBoz\streamango\Entity\Ticket;
+use BurakBoz\streamango\Entity\UploadLink;
+use BurakBoz\streamango\Exception\BadRequestException;
+use BurakBoz\streamango\Exception\BandwidthUsageExceededException;
+use BurakBoz\streamango\Exception\FileNotFoundException;
+use BurakBoz\streamango\Exception\PermissionDeniedException;
+use BurakBoz\streamango\Exception\ServerException;
+use BurakBoz\streamango\Exception\UnavailableForLegalReasonsException;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * OpenLoadClient
+ * streamangoClient
  *
  * @author Daniele Pedone aka Ideneal <ideneal.ztl@gmail.com>
  */
-class OpenLoadClient
+class streamangoClient
 {
     const API_BASE_URL = 'https://api.fruithosted.net';
     const API_VERSION  = 1;
@@ -89,7 +89,7 @@ class OpenLoadClient
     public function getAccountInfo()
     {
         $params   = $this->getAuthParams();
-        $response = $this->processRequest('account/info', $params);
+        $response = $this->processRequest('/account/info', $params);
         $result   = $this->processResponse($response);
         return AccountInfoBuilder::buildAccountInfo($result);
     }
@@ -104,7 +104,7 @@ class OpenLoadClient
     public function getTicket($file)
     {
         $params   = ['file' => (string) $file];
-        $response = $this->processRequest('file/dlticket', $params);
+        $response = $this->processRequest('/file/dlticket', $params);
         $result   = $this->processResponse($response);
         $ticket   = TicketBuilder::buildTicket($result);
 
@@ -132,7 +132,7 @@ class OpenLoadClient
             $params['captcha_response'] = $captchaResponse;
         }
 
-        $response = $this->processRequest('file/dl', $params);
+        $response = $this->processRequest('/file/dl', $params);
         $result   = $this->processResponse($response);
 
         return LinkBuilder::buildDownloadLink($result);
@@ -152,7 +152,7 @@ class OpenLoadClient
 
         $params['file'] = implode(',', $files);
 
-        $response = $this->processRequest('file/info', $params);
+        $response = $this->processRequest('/file/info', $params);
         $results  = $this->processResponse($response);
 
         $filesInfo = [];
@@ -200,7 +200,7 @@ class OpenLoadClient
             $params['httponly'] = true;
         }
 
-        $response = $this->processRequest('file/ul', $params);
+        $response = $this->processRequest('/file/ul', $params);
         $result   = $this->processResponse($response);
 
         return LinkBuilder::buildUploadLink($result);
@@ -229,7 +229,7 @@ class OpenLoadClient
             $params['headers'] .= $name.": ".$header."\n";
         }
 
-        $response = $this->processRequest('remotedl/add', $params);
+        $response = $this->processRequest('/remotedl/add', $params);
         $result   = $this->processResponse($response);
 
         return RemoteUploadBuilder::buildRemoteUpload($result);
@@ -247,7 +247,7 @@ class OpenLoadClient
         $params = $this->getAuthParams();
         $params['id'] = $remoteUpload->getId();
 
-        $response = $this->processRequest('remotedl/status', $params);
+        $response = $this->processRequest('/remotedl/status', $params);
         $result   = $this->processResponse($response);
 
         // TODO fix this shit
@@ -270,7 +270,7 @@ class OpenLoadClient
         $params = $this->getAuthParams();
         $params['limit'] = max([0, min([$limit, 100])]);
 
-        $response = $this->processRequest('remotedl/status', $params);
+        $response = $this->processRequest('/remotedl/status', $params);
         $results  = $this->processResponse($response);
 
         $status = [];
@@ -296,7 +296,7 @@ class OpenLoadClient
             $params['folder'] = (string) $folder;
         }
 
-        $response = $this->processRequest('file/listfolder', $params);
+        $response = $this->processRequest('/file/listfolder', $params);
         $results  = $this->processResponse($response);
 
         $contents = [];
@@ -327,7 +327,7 @@ class OpenLoadClient
             $params['folder'] = (string) $folder;
         }
 
-        $response = $this->processRequest('file/listfolder', $params);
+        $response = $this->processRequest('/file/listfolder', $params);
         $results  = $this->processResponse($response);
 
         $contents = [];
@@ -354,7 +354,7 @@ class OpenLoadClient
             $params['folder'] = (string) $folder;
         }
 
-        $response = $this->processRequest('file/listfolder', $params);
+        $response = $this->processRequest('/file/listfolder', $params);
         $results  = $this->processResponse($response);
 
         $contents = [];
@@ -378,7 +378,7 @@ class OpenLoadClient
         $params = $this->getAuthParams();
         $params['file'] = (string) $file;
 
-        $response = $this->processRequest('file/convert', $params);
+        $response = $this->processRequest('/file/convert', $params);
         $result   = $this->processResponse($response);
 
         return $result;
@@ -399,7 +399,7 @@ class OpenLoadClient
             $params['folder'] = (string) $folder;
         }
 
-        $response = $this->processRequest('file/runningconverts', $params);
+        $response = $this->processRequest('/file/runningconverts', $params);
         $results  = $this->processResponse($response);
 
         $conversions = [];
@@ -423,7 +423,7 @@ class OpenLoadClient
         $params = $this->getAuthParams();
         $params['file'] = (string) $file;
 
-        $response = $this->processRequest('file/getsplash', $params);
+        $response = $this->processRequest('/file/getsplash', $params);
         $result   = $this->processResponse($response);
 
         return $result;

@@ -1,13 +1,19 @@
 {
-    "name": "ideneal/openload",
+    "name": "BurakBoz/streamango",
     "type": "library",
-    "description": "OpenLoad Service Client Library",
+    "description": "Streamango Service Client Library",
     "license": "MIT",
     "authors": [
         {
             "name": "Daniele Pedone",
             "email": "ideneal.ztl@gmail.com",
             "homepage": "http://ideneal.altervista.org/",
+            "role": "Developer"
+        },
+        {
+            "name": "Burak Boz",
+            "email": "burakboz@icloud.com",
+            "homepage": "https://github.com/BurakBoz/",
             "role": "Developer"
         }
     ],
@@ -20,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Ideneal\\OpenLoad\\": "src/"
+            "BurakBoz\\streamango\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Ideneal\\OpenLoad\\Test\\": "tests/"
+            "BurakBoz\\streamango\\Test\\": "tests/"
         }
     }
 }

@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ideneal\OpenLoad\Test\Builder;
+namespace BurakBoz\streamango\Test\Builder;
 
-use Ideneal\OpenLoad\Builder\ConversionStatusBuilder;
+use BurakBoz\streamango\Builder\ConversionStatusBuilder;
 
 /**
  * ConversionStatusBuilderTest
@@ -32,6 +32,6 @@ class ConversionStatusBuilderTest extends \PHPUnit_Framework_TestCase
     {
         $data   = json_decode($this->fixture, true);
         $status = ConversionStatusBuilder::buildConversionStatus($data);
-        $this->assertInstanceOf('Ideneal\OpenLoad\Entity\ConversionStatus', $status);
+        $this->assertInstanceOf('BurakBoz\streamango\Entity\ConversionStatus', $status);
     }
 }

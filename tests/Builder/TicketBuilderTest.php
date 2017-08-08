@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ideneal\OpenLoad\Test\Builder;
+namespace BurakBoz\streamango\Test\Builder;
 
-use Ideneal\OpenLoad\Builder\CaptchaBuilder;
-use Ideneal\OpenLoad\Builder\TicketBuilder;
+use BurakBoz\streamango\Builder\CaptchaBuilder;
+use BurakBoz\streamango\Builder\TicketBuilder;
 
 /**
  * TicketBuilderTest
@@ -33,7 +33,7 @@ class TicketBuilderTest extends \PHPUnit_Framework_TestCase
     {
         $data   = json_decode($this->fixture, true);
         $ticket = TicketBuilder::buildTicket($data);
-        $this->assertInstanceOf('Ideneal\OpenLoad\Entity\Ticket', $ticket);
+        $this->assertInstanceOf('BurakBoz\streamango\Entity\Ticket', $ticket);
     }
 
     /**
@@ -43,6 +43,6 @@ class TicketBuilderTest extends \PHPUnit_Framework_TestCase
     {
         $data    = json_decode($this->fixture, true);
         $captcha = CaptchaBuilder::buildCaptcha($data['captcha_url'], $data['captcha_w'], $data['captcha_h']);
-        $this->assertInstanceOf('Ideneal\OpenLoad\Entity\Captcha', $captcha);
+        $this->assertInstanceOf('BurakBoz\streamango\Entity\Captcha', $captcha);
     }
 }

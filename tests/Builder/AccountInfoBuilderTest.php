@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ideneal\OpenLoad\Test\Builder;
+namespace BurakBoz\streamango\Test\Builder;
 
-use Ideneal\OpenLoad\Builder\AccountInfoBuilder;
+use BurakBoz\streamango\Builder\AccountInfoBuilder;
 
 /**
  * AccountInfoBuilderTest
@@ -32,7 +32,7 @@ class AccountInfoBuilderTest extends \PHPUnit_Framework_TestCase
     {
         $data    = json_decode($this->fixture, true);
         $account = AccountInfoBuilder::buildAccountInfo($data);
-        $this->assertInstanceOf('Ideneal\OpenLoad\Entity\AccountInfo', $account);
+        $this->assertInstanceOf('BurakBoz\streamango\Entity\AccountInfo', $account);
         $this->assertEquals('admin@openload.co', $account->getEmail());
     }
 }

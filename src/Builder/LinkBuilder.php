@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ideneal\OpenLoad\Builder;
+namespace BurakBoz\streamango\Builder;
 
-use Ideneal\OpenLoad\Entity\DownloadLink;
-use Ideneal\OpenLoad\Entity\UploadLink;
+use BurakBoz\streamango\Entity\DownloadLink;
+use BurakBoz\streamango\Entity\UploadLink;
 
 /**
  * DownloadLinkBuilder

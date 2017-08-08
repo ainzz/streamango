@@ -22,9 +22,9 @@ All api features are implemented, from retrieve account info
 
 include_once './vendor/autoload.php';
 
-use Ideneal\OpenLoad\OpenLoadClient;
+use BurakBoz\streamango\streamangoClient;
 
-$openload = new OpenLoadClient('apiLogin', 'apiKey');
+$openload = new streamangoClient('apiLogin', 'apiKey');
 
 $accountInfo = $openload->getAccountInfo();
 echo $accountInfo->getEmail(); //account@email.com
@@ -37,20 +37,22 @@ to upload a file
 
 include_once './vendor/autoload.php';
 
-use Ideneal\OpenLoad\OpenLoadClient;
+use BurakBoz\streamango\streamangoClient;
 
-$openload = new OpenLoadClient('apiLogin', 'apiKey');
+$openload = new streamangoClient('apiLogin', 'apiKey');
 
 $openload->uploadFile('/home/user/Pictures/image.jpg');
 ```
 
-It's also possible find more about what you can to do at [OpenLoad Api](https://openload.co/api).
+It's also possible find more about what you can to do at [streamango API](https://streamango.com/api).
 
 ## Author
 
-Daniele Pedone
+Burak Boz
 
 ## License
 
 MIT
 
+## Info
+Forked from Ideneal/OpenLoad 

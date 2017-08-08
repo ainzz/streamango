@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ideneal\OpenLoad\Builder;
+namespace BurakBoz\streamango\Builder;
 
-use Ideneal\OpenLoad\Entity\RemoteUpload;
-use Ideneal\OpenLoad\Entity\RemoteUploadStatus;
+use BurakBoz\streamango\Entity\RemoteUpload;
+use BurakBoz\streamango\Entity\RemoteUploadStatus;
 
 /**
  * RemoteUploadBuilder

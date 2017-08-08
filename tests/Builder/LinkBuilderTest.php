@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ideneal\OpenLoad\Test\Builder;
+namespace BurakBoz\streamango\Test\Builder;
 
-use Ideneal\OpenLoad\Builder\LinkBuilder;
+use BurakBoz\streamango\Builder\LinkBuilder;
 
 /**
  * LinkBuilderTest
@@ -37,7 +37,7 @@ class LinkBuilderTest extends \PHPUnit_Framework_TestCase
     {
         $data       = json_decode($this->uploadFixture, true);
         $uploadLink = LinkBuilder::buildUploadLink($data);
-        $this->assertInstanceOf('Ideneal\OpenLoad\Entity\UploadLink', $uploadLink);
+        $this->assertInstanceOf('BurakBoz\streamango\Entity\UploadLink', $uploadLink);
     }
 
     /**
@@ -47,6 +47,6 @@ class LinkBuilderTest extends \PHPUnit_Framework_TestCase
     {
         $data         = json_decode($this->downloadFixture, true);
         $downloadLink = LinkBuilder::buildDownloadLink($data);
-        $this->assertInstanceOf('Ideneal\OpenLoad\Entity\DownloadLink', $downloadLink);
+        $this->assertInstanceOf('BurakBoz\streamango\Entity\DownloadLink', $downloadLink);
     }
 }

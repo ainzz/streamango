@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ideneal\OpenLoad\Test\Builder;
+namespace BurakBoz\streamango\Test\Builder;
 
-use Ideneal\OpenLoad\Builder\ContentBuilder;
+use BurakBoz\streamango\Builder\ContentBuilder;
 
 /**
  * ContentBuilderTest
@@ -37,7 +37,7 @@ class ContentBuilderTest extends \PHPUnit_Framework_TestCase
     {
         $data   = json_decode($this->folderFixture, true);
         $folder = ContentBuilder::buildFolder($data);
-        $this->assertInstanceOf('Ideneal\OpenLoad\Entity\Folder', $folder);
+        $this->assertInstanceOf('BurakBoz\streamango\Entity\Folder', $folder);
     }
 
     /**
@@ -47,6 +47,6 @@ class ContentBuilderTest extends \PHPUnit_Framework_TestCase
     {
         $data = json_decode($this->fileFixture, true);
         $file = ContentBuilder::buildFile($data);
-        $this->assertInstanceOf('Ideneal\OpenLoad\Entity\File', $file);
+        $this->assertInstanceOf('BurakBoz\streamango\Entity\File', $file);
     }
 }
