@@ -1,8 +1,8 @@
 # StreaMango
 
-[![Packagist](https://img.shields.io/packagist/v/ideneal/openload.svg?style=flat-square)](https://packagist.org/packages/BurakBoz/streamango)
+[![Packagist](https://img.shields.io/packagist/v/burakboz/streamango.svg?style=flat-square)](https://packagist.org/packages/BurakBoz/streamango)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/BurakBoz/streamango/master/LICENSE)
-[![Travis branch](https://img.shields.io/travis/Ideneal/OpenLoad/master.svg?style=flat-square)](https://travis-ci.org/BurakBoz/streamango)
+[![Travis branch](https://travis-ci.org/BurakBoz/streamango.svg?branch=master)](https://travis-ci.org/BurakBoz/streamango)
 
 It's just a php client of the [streamango.com](https://streamango.com/) service.
 
