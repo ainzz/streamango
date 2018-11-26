@@ -74,7 +74,7 @@ class streamangoClient
         $this->login = $login;
         $this->key   = $key;
 
-        $baseUri = self::API_BASE_URL . '/'. self::API_VERSION . '/';
+        $baseUri = self::API_BASE_URL . '/';
 
         $this->client = new Client(array(
             'base_uri' => $baseUri
