@@ -1,5 +1,5 @@
 {
-    "name": "burakboz/streamango",
+    "name": "ainzz/streamango",
     "type": "library",
     "description": "Streamango Service Client Library",
     "license": "MIT",
@@ -14,6 +14,12 @@
             "name": "Burak Boz",
             "email": "burakboz@icloud.com",
             "homepage": "https://github.com/BurakBoz/",
+            "role": "Developer"
+        },
+        {
+            "name": "Alin Stefan",
+            "email": "alintanase02@gmail.com",
+            "homepage": "https://github.com/ainzz/",
             "role": "Developer"
         }
     ],
